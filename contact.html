@@ -270,5 +270,20 @@
     </footer>
 
     <script src="js/script.js"></script>
+
+    document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const form = document.getElementById('contactForm');
+  const successMessage = document.getElementById('successMessage');
+
+  if (urlParams.has('success')) {
+    form.style.display = 'none';              // cache le formulaire
+    successMessage.style.display = 'block';   // affiche message succès
+
+    // Nettoyer l'URL pour ne pas garder le param success=1
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+});
+    
 </body>
 </html>
