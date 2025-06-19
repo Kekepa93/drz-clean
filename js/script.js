@@ -205,6 +205,7 @@ function initializeContactForm() {
         successMessage.style.display = 'block';
         successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
+        window.history.replaceState(null, null, window.location.pathname);
 
     // Logique de l’adresse si livraison à domicile
     const domicileCheckbox = document.getElementById('domicile');
