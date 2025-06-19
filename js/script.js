@@ -187,7 +187,7 @@ function initializeContactForm() {
 
     if (!contactForm) return;
 
-    contactForm.addEventListener('submit', handleFormSubmit);
+    
 
     // Dynamic form behavior
     const serviceSelect = document.getElementById('service');
