@@ -183,14 +183,29 @@ function initializeFAQ() {
 // ===== CONTACT FORM =====
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
-    const successMessage = document.getElementById('successMessage');
+    const successMessage = document.getElementById('customSuccessMessage');
 
     if (!contactForm) return;
 
-    
+    // Affichage du loader pendant l'envoi
+    contactForm.addEventListener('submit', function () {
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const btnText = submitBtn.querySelector('.btn-text');
+        const btnLoading = submitBtn.querySelector('.btn-loading');
 
-    // Dynamic form behavior
-    const serviceSelect = document.getElementById('service');
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+    });
+
+    // Vérifie si ?success=1 est présent dans l’URL
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.has('success')) {
+        contactForm.style.display = 'none';
+        successMessage.style.display = 'block';
+        successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // Logique de l’adresse si livraison à domicile
     const domicileCheckbox = document.getElementById('domicile');
     const adresseField = document.getElementById('adresse');
 
@@ -206,7 +221,7 @@ function initializeContactForm() {
         });
     }
 
-    // Set minimum date to today
+    // Date min = aujourd’hui
     const dateInput = document.getElementById('date');
     if (dateInput) {
         const today = new Date().toISOString().split('T')[0];
