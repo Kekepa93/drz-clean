@@ -7,32 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>DRZ<span class="accent">CLEAN</span></h2>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Accueil</a></li>
-                <li><a href="services.html" class="nav-link">Services</a></li>
-                <li><a href="tarifs.html" class="nav-link">Tarifs</a></li>
-                <li><a href="avant-apres.html" class="nav-link">Avant/Après</a></li>
-                <li><a href="contact.html" class="nav-link active">Contact</a></li>
-                <li><a href="faq.html" class="nav-link">FAQ</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
-
     <!-- Page Header -->
     <section class="page-header">
         <div class="container">
@@ -66,52 +44,16 @@
                             <span class="contact-note">Devis sous 24h</span>
                         </div>
                     </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">⏰</div>
-                        <div class="contact-details">
-                            <h3>Horaires</h3>
-                            <p>Lundi - Samedi : 8h - 19h</p>
-                            <p>Dimanche : 9h - 17h</p>
-                            <span class="contact-note">Service 7j/7</span>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <div class="contact-icon">🏠</div>
-                        <div class="contact-details">
-                            <h3>Zone d'intervention</h3>
-                            <p>Service à domicile</p>
-                            <p>Rayon 20km autour de Paris</p>
-                            <span class="contact-note">Déplacement +10€</span>
-                        </div>
-                    </div>
-
-                    <div class="social-section">
-                        <h3>Suivez-nous</h3>
-                        <div class="social-links">
-                            <a href="#" class="social-link">
-                                <span class="social-icon">📘</span>
-                                <span class="social-text">Facebook</span>
-                            </a>
-                            <a href="#" class="social-link">
-                                <span class="social-icon">📷</span>
-                                <span class="social-text">Instagram</span>
-                            </a>
-                        </div>
-                    </div>
                 </div>
 
                 <!-- Contact Form -->
                 <div class="contact-form-container">
                     <h2>Demande de <span class="accent">devis</span></h2>
 
-                        <form action="https://formspree.io/f/movwlgqk" method="POST" class="contact-form" id="contactForm">
-  <input type="hidden" name="_redirect" value="https://kekepa93.github.io/drz-clean/contact.html?success=1">
-
-
-
-                    
+                    <!-- Formulaire -->
+                    <form action="https://formspree.io/f/movwlgqk" method="POST" class="contact-form" id="contactForm">
+                        <input type="hidden" name="_redirect" value="https://kekepa93.github.io/drz-clean/contact.html?success=1">
+                        
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nom">Nom *</label>
@@ -169,7 +111,7 @@
                             </label>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" style="display: none;">
                             <label for="adresse">Adresse (si service à domicile)</label>
                             <textarea id="adresse" name="adresse" rows="3" placeholder="Indiquez votre adresse complète"></textarea>
                         </div>
@@ -205,15 +147,15 @@
                         </div>
                     </form>
 
-                
-
                     <!-- Success Message -->
-                    <div id="successMessage" class="success-message" style="display: none;">
-
+                    <div id="successMessage" class="success-message">
                         <div class="success-content">
                             <div class="success-icon">✅</div>
-                            <h3>Message envoyé !</h3>
-                            <p>Nous vous recontactons très rapidement pour confirmer votre rendez-vous.</p>
+                            <h3>Message envoyé avec succès !</h3>
+                            <p>Merci pour votre demande. Nous vous recontactons très rapidement pour confirmer votre rendez-vous.</p>
+                            <p style="margin-top: 15px; font-size: 14px;">
+                                <strong>Réponse garantie sous 2h en journée !</strong>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -221,69 +163,79 @@
         </div>
     </section>
 
-    <!-- Emergency Contact -->
-    <section class="emergency-contact">
-        <div class="container">
-            <div class="emergency-card">
-                <div class="emergency-content">
-                    <h3>Besoin urgent ?</h3>
-                    <p>Appelez-nous directement pour une réservation immédiate</p>
-                    <a href="tel:+33123456789" class="btn btn-emergency">
-                        📞 Appel direct : 01 23 45 67 89
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <script>
+        // ===== CONTACT FORM HANDLING =====
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeContactForm();
+        });
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>DRZ<span class="accent">CLEAN</span></h3>
-                    <p>L'éclat urbain pour ton auto</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Navigation</h4>
-                    <ul>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="tarifs.html">Tarifs</a></li>
-                        <li><a href="avant-apres.html">Avant/Après</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-contact">
-                    <h4>Contact</h4>
-                    <p>📞 <a href="tel:+33123456789">01 23 45 67 89</a></p>
-                    <p>✉️ <a href="mailto:dannikk056@gmail.com">dannikk056@gmail.com</a></p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">📘</a>
-                        <a href="#" class="social-link">📷</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 DrzClean. Tous droits réservés.</p>
-            </div>
-        </div>
-    </footer>
+        function initializeContactForm() {
+            const contactForm = document.getElementById('contactForm');
+            const successMessage = document.getElementById('successMessage');
+            
+            if (!contactForm || !successMessage) return;
 
-    <script src="js/script.js"></script>
+            // Vérifier si l'URL contient le paramètre success
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success')) {
+                // Masquer le formulaire et afficher le message de succès
+                contactForm.style.display = 'none';
+                successMessage.classList.add('show');
+                
+                // Faire défiler vers le message de succès
+                successMessage.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+                
+                // Nettoyer l'URL pour éviter de ré-afficher le message lors du rechargement
+                window.history.replaceState({}, document.title, window.location.pathname);
+                
+                // Optionnel : masquer le message après quelques secondes et réafficher le formulaire
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                    contactForm.style.display = 'grid';
+                }, 10000); // 10 secondes
+            }
 
-    document.addEventListener('DOMContentLoaded', () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const form = document.getElementById('contactForm');
-  const successMessage = document.getElementById('successMessage');
+            // Gestion du loader pendant l'envoi
+            contactForm.addEventListener('submit', function(e) {
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const btnText = submitBtn.querySelector('.btn-text');
+                const btnLoading = submitBtn.querySelector('.btn-loading');
 
-  if (urlParams.has('success')) {
-    form.style.display = 'none';              // cache le formulaire
-    successMessage.style.display = 'block';   // affiche message succès
+                if (btnText && btnLoading) {
+                    btnText.style.display = 'none';
+                    btnLoading.style.display = 'inline';
+                    submitBtn.disabled = true;
+                }
+            });
 
-    // Nettoyer l'URL pour ne pas garder le param success=1
-    window.history.replaceState({}, document.title, window.location.pathname);
-  }
-});
-    
+            // Gestion de l'affichage de l'adresse si service à domicile
+            const domicileCheckbox = document.getElementById('domicile');
+            const adresseField = document.getElementById('adresse');
+
+            if (domicileCheckbox && adresseField) {
+                domicileCheckbox.addEventListener('change', function() {
+                    const adresseGroup = adresseField.parentElement;
+                    if (domicileCheckbox.checked) {
+                        adresseField.required = true;
+                        adresseGroup.style.display = 'flex';
+                    } else {
+                        adresseField.required = false;
+                        adresseGroup.style.display = 'none';
+                        adresseField.value = ''; // Vider le champ si non nécessaire
+                    }
+                });
+            }
+
+            // Définir la date minimum à aujourd'hui
+            const dateInput = document.getElementById('date');
+            if (dateInput) {
+                const today = new Date().toISOString().split('T')[0];
+                dateInput.min = today;
+            }
+        }
+    </script>
 </body>
 </html>
