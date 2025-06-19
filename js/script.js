@@ -183,7 +183,8 @@ function initializeFAQ() {
 // ===== CONTACT FORM =====
 function initializeContactForm() {
     const contactForm = document.getElementById('contactForm');
-    const successMessage = document.getElementById('customSuccessMessage');
+    const successMessage = document.getElementById('successMessage');
+
 
     if (!contactForm) return;
 
