@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - DrzClean</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>DRZ<span class="accent">CLEAN</span></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Accueil</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="tarifs.html" class="nav-link">Tarifs</a></li>
+                <li><a href="avant-apres.html" class="nav-link">Avant/Après</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1><span class="accent">Contact</span></h1>
+            <p>Réservez votre créneau ou demandez un devis personnalisé</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Nous <span class="accent">contacter</span></h2>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h3>Téléphone</h3>
+                            <p><a href="tel:+33123456789">01 23 45 67 89</a></p>
+                            <span class="contact-note">Réponse rapide garantie</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div class="contact-details">
+                            <h3>Email</h3>
+                            <p><a href="mailto:contact@drzclean.fr">contact@drzclean.fr</a></p>
+                            <span class="contact-note">Devis sous 24h</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">⏰</div>
+                        <div class="contact-details">
+                            <h3>Horaires</h3>
+                            <p>Lundi - Samedi : 8h - 19h</p>
+                            <p>Dimanche : 9h - 17h</p>
+                            <span class="contact-note">Service 7j/7</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">🏠</div>
+                        <div class="contact-details">
+                            <h3>Zone d'intervention</h3>
+                            <p>Service à domicile</p>
+                            <p>Rayon 20km autour de Paris</p>
+                            <span class="contact-note">Déplacement +10€</span>
+                        </div>
+                    </div>
+
+                    <div class="social-section">
+                        <h3>Suivez-nous</h3>
+                        <div class="social-links">
+                            <a href="#" class="social-link">
+                                <span class="social-icon">📘</span>
+                                <span class="social-text">Facebook</span>
+                            </a>
+                            <a href="#" class="social-link">
+                                <span class="social-icon">📷</span>
+                                <span class="social-text">Instagram</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-container">
+                    <h2>Demande de <span class="accent">devis</span></h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nom">Nom *</label>
+                                <input type="text" id="nom" name="nom" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="prenom">Prénom *</label>
+                                <input type="text" id="prenom" name="prenom" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telephone">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="vehicule">Type de véhicule *</label>
+                            <select id="vehicule" name="vehicule" required>
+                                <option value="">Sélectionnez votre véhicule</option>
+                                <option value="berline">Berline</option>
+                                <option value="break">Break</option>
+                                <option value="suv">SUV / 4x4</option>
+                                <option value="monospace">Monospace</option>
+                                <option value="coupe">Coupé / Cabriolet</option>
+                                <option value="utilitaire">Utilitaire</option>
+                                <option value="moto">Moto</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service souhaité *</label>
+                            <select id="service" name="service" required>
+                                <option value="">Choisissez un service</option>
+                                <option value="express">Formule Express (25€)</option>
+                                <option value="standard">Formule Standard (45€)</option>
+                                <option value="premium">Formule Premium (75€)</option>
+                                <option value="interieur">Intérieur seul (30€)</option>
+                                <option value="carte">Service à la carte</option>
+                                <option value="devis">Devis personnalisé</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="domicile">
+                                <input type="checkbox" id="domicile" name="domicile">
+                                Service à domicile (+10€)
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="adresse">Adresse (si service à domicile)</label>
+                            <textarea id="adresse" name="adresse" rows="3" placeholder="Indiquez votre adresse complète"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Message / Demandes particulières</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Décrivez vos besoins spécifiques, l'état du véhicule, ou toute autre information utile..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="date">Date souhaitée</label>
+                            <input type="date" id="date" name="date">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="heure">Créneau horaire préféré</label>
+                            <select id="heure" name="heure">
+                                <option value="">Pas de préférence</option>
+                                <option value="matin">Matin (8h-12h)</option>
+                                <option value="aprem">Après-midi (12h-17h)</option>
+                                <option value="soir">Fin de journée (17h-19h)</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span class="btn-text">Envoyer la demande</span>
+                            <span class="btn-loading">Envoi en cours...</span>
+                        </button>
+
+                        <div class="form-note">
+                            <p><strong>Réponse garantie sous 2h en journée !</strong></p>
+                            <p>* Champs obligatoires</p>
+                        </div>
+                    </form>
+
+                    <!-- Success Message -->
+                    <div id="successMessage" class="success-message">
+                        <div class="success-content">
+                            <div class="success-icon">✅</div>
+                            <h3>Message envoyé !</h3>
+                            <p>Nous vous recontactons très rapidement pour confirmer votre rendez-vous.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="emergency-contact">
+        <div class="container">
+            <div class="emergency-card">
+                <div class="emergency-content">
+                    <h3>Besoin urgent ?</h3>
+                    <p>Appelez-nous directement pour une réservation immédiate</p>
+                    <a href="tel:+33123456789" class="btn btn-emergency">
+                        📞 Appel direct : 01 23 45 67 89
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>DRZ<span class="accent">CLEAN</span></h3>
+                    <p>L'éclat urbain pour ton auto</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="tarifs.html">Tarifs</a></li>
+                        <li><a href="avant-apres.html">Avant/Après</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact</h4>
+                    <p>📞 <a href="tel:+33123456789">01 23 45 67 89</a></p>
+                    <p>✉️ <a href="mailto:contact@drzclean.fr">contact@drzclean.fr</a></p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">📷</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DrzClean. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
