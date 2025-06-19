@@ -56,6 +56,12 @@ h4 { font-size: 1.5rem; }
     transition: all 0.3s ease;
 }
 
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
 .nav-container {
     display: flex;
     justify-content: space-between;
@@ -89,6 +95,22 @@ h4 { font-size: 1.5rem; }
 .nav-link:hover,
 .nav-link.active {
     color: #00d4ff;
+}
+
+
+#scrollIndicator {
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.scroll-arrow {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+    40% {transform: translateY(-10px);}
+    60% {transform: translateY(-5px);}
 }
 
 .nav-link::after {
@@ -172,7 +194,7 @@ h4 { font-size: 1.5rem; }
 
 .hero-line {
     display: block;
-    animation: slideInUp 0.8s ease-out forwards;
+    animation: slideInUp 0.5s ease-out forwards;
     opacity: 0;
     transform: translateY(30px);
 }
@@ -185,7 +207,7 @@ h4 { font-size: 1.5rem; }
     font-size: 1.3rem;
     margin-bottom: 2rem;
     opacity: 0;
-    animation: slideInUp 0.8s ease-out 0.8s forwards;
+    animation: slideInUp 0.5s ease-out 0.8s forwards;
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -195,7 +217,7 @@ h4 { font-size: 1.5rem; }
     justify-content: center;
     flex-wrap: wrap;
     opacity: 0;
-    animation: slideInUp 0.8s ease-out 1s forwards;
+    animation: slideInUp 0.5s ease-out 1s forwards;
 }
 
 .scroll-indicator {
@@ -275,7 +297,7 @@ h4 { font-size: 1.5rem; }
 
 /* ===== SECTIONS ===== */
 .about, .services-preview, .pricing, .contact, .faq, .gallery {
-    padding: 5rem 0;
+    padding: 4rem 0;
 }
 
 .about {
@@ -390,6 +412,13 @@ h4 { font-size: 1.5rem; }
 .services-cta {
     text-align: center;
 }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 colonnes égales */
+  gap: 50px; /* espace entre les cases */
+}
+
 
 /* ===== DETAILED SERVICES ===== */
 .services-detailed {
@@ -1465,4 +1494,163 @@ button:focus {
     .contact-item {
         border: 1px solid #ffffff;
     }
+}
+
+.tab-contents {
+  position: relative;
+  min-height: 300px; /* Ajustez selon le contenu */
+}
+
+.tab-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
+}
+
+.tab-content.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* ======= EFFETS DE BASE ======= */
+.logo-link {
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px; /* Optionnel */
+}
+
+.logo-link img {
+  transition: inherit;
+}
+
+/* ======= EFFET DE SURVOL PRINCIPAL ======= */
+.logo-link:hover {
+  transform: translateY(-3px);
+  filter: drop-shadow(0 6px 12px rgba(0, 100, 255, 0.25));
+}
+
+.logo-link:hover img {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* ======= ANIMATION LUMINEUSE (Option avancée) ======= */
+.logo-link::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: 0.8s;
+}
+
+.logo-link:hover::after {
+  left: 120%;
+}
+
+/* ======= EFFET PULSATION (Option subtile) ======= */
+ @keyframes logo-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+.logo-link:hover {
+  animation: logo-pulse 1.2s ease infinite;
+}
+
+@media (hover: none) {
+  .logo-link:hover { transform: none; filter: none; }
+}
+
+
+.logo-link:active {
+  transform: scale(0.95) !important;
+}
+
+
+----------
+
+.logo-link .logo-drz {
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.logo-link .logo-clean {
+  color: #00d4ff; /* couleur par défaut accent */
+  transition: color 0.3s ease;
+}
+
+.logo-link:hover .logo-drz {
+  color: #00d4ff; /* bleu au hover */
+}
+
+.logo-link:hover .logo-clean {
+  color: orange; /* orange au hover */
+}
+
+
+
+
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+/*.instagram {
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+.facebook {
+  background: #1877f2;
+}*/
+
+.social-link:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+--------------------------
+
+
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+  color: #fff;
+  min-width: 120px;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.8;
 }

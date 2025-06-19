@@ -495,3 +495,91 @@ if (typeof module !== 'undefined' && module.exports) {
         throttle
     };
 }
+
+// Scroll dynamique
+document.getElementById('scrollIndicator').addEventListener('click', function() {
+    window.scrollTo({
+        top: document.getElementById('about').offsetTop,
+        behavior: 'smooth'
+    });
+});
+
+// Animation de l'indicateur
+window.addEventListener('scroll', function() {
+    const indicator = document.getElementById('scrollIndicator');
+    if (window.scrollY > 100) {
+        indicator.style.opacity = '0';
+        indicator.style.pointerEvents = 'none';
+    } else {
+        indicator.style.opacity = '1';
+        indicator.style.pointerEvents = 'auto';
+    }
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  const tabButtons = document.querySelectorAll('.tab-button');
+  
+  if (tabButtons.length > 0) {
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        // 1. Désactiver tous les onglets
+        document.querySelectorAll('.tab-button, .tab-content').forEach(el => {
+          el.classList.remove('active');
+        });
+        
+        // 2. Activer l'onglet cliqué
+        const tabId = button.dataset.tab;
+        button.classList.add('active');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+    
+    // Déclenche un faux clic pour initialiser
+    tabButtons[0].click(); 
+  }
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter');
+  const options = {
+    threshold: 0.5 // Le compteur démarre quand 50% de l'élément est visible
+  };
+
+  const startCount = (counter) => {
+    const target = +counter.getAttribute('data-target');
+    const speed = 200;
+    const increment = target / speed;
+    let count = 0;
+
+    const updateCount = () => {
+      if (count < target) {
+        count += increment;
+        counter.innerText = Math.ceil(count);
+        setTimeout(updateCount, 10);
+      } else {
+        counter.innerText = target;
+        if (target === 98) counter.innerText += '%';
+        if (target === 24) counter.innerText += '/7';
+        if (target === 500) counter.innerText += '+';
+      }
+    };
+
+    updateCount();
+  };
+
+  const observer = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const counter = entry.target;
+        startCount(counter);
+        obs.unobserve(counter); // Ne recommence pas l’animation si on rescroll
+      }
+    });
+  }, options);
+
+  counters.forEach(counter => {
+    observer.observe(counter);
+  });
+});

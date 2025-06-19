@@ -14,9 +14,14 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="nav-logo">
-                <h2>DRZ<span class="accent">CLEAN</span></h2>
-            </div>
+    <div class="nav-logo">
+  <a href="index.html" class="logo-link">
+    <h2>
+      <span class="logo-drz">DRZ</span><span class="logo-clean">CLEAN</span>
+    </h2>
+  </a>
+</div>
+
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link active">Accueil</a></li>
                 <li><a href="services.html" class="nav-link">Services</a></li>
@@ -36,7 +41,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-background">
-            <img src="https://images.pexels.com/photos/3422964/pexels-photo-3422964.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop" alt="Voiture brillante" class="hero-image">
+            <img src="voiture.png" alt="Voiture nettoyée par DrzClean" class="hero-image">
             <div class="hero-overlay"></div>
         </div>
         <div class="hero-content">
@@ -51,37 +56,41 @@
                 <a href="contact.html" class="btn btn-secondary">Prendre contact</a>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow"></div>
+        <div class="scroll-indicator" id="scrollIndicator">
+         <div class="scroll-arrow"></div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h2>L'excellence automobile <span class="accent">urbaine</span></h2>
                     <p>DrzClean, c'est la rencontre entre l'art du détailing automobile et l'esthétique street. Nous transformons votre véhicule en véritable œuvre d'art roulante, avec des finitions impeccables qui reflètent votre style unique.</p>
                     <p>Chaque lavage est une expérience premium, chaque détail compte. Votre satisfaction, c'est notre signature.</p>
-                    <div class="stats">
-                        <div class="stat">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Véhicules lavés</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">98%</span>
-                            <span class="stat-label">Clients satisfaits</span>
-                        </div>
-                        <div class="stat">
-                            <span class="stat-number">24/7</span>
-                            <span class="stat-label">Disponibilité</span>
-                        </div>
-                    </div>
+              
+<div class="stats">
+  <div class="stat">
+    <span class="stat-number counter" data-target="500">0</span>
+    <span class="stat-label">Véhicules lavés</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number counter" data-target="98">0</span>
+    <span class="stat-label">Clients satisfaits</span>
+  </div>
+  <div class="stat">
+    <span class="stat-number counter" data-target="24">0</span>
+    <span class="stat-label">Disponibilité</span>
+  </div>
+</div>
+
+
+
                 </div>
                 <div class="about-image">
-                    <img src="https://images.pexels.com/photos/3972755/pexels-photo-3972755.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Lavage professionnel" class="about-img">
-                    <div class="about-decoration"></div>
+                    <img src="voiture2.png" alt="Lavage professionnel" class="about-img">
+                    
                 </div>
             </div>
         </div>
@@ -135,9 +144,11 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <h3>DRZ<span class="accent">CLEAN</span></h3>
-                    <p>L'éclat urbain pour ton auto</p>
-                </div>
+    <a href="index.html" class="logo-link">
+        <img src="logo1.png" alt="Logo DrzClean" style="max-width: 180px; height: auto;">
+    </a>
+    <p>L'éclat urbain pour ton auto</p>
+</div>
                 <div class="footer-links">
                     <h4>Navigation</h4>
                     <ul>
@@ -152,9 +163,24 @@
                     <p>📞 <a href="tel:+33123456789">01 23 45 67 89</a></p>
                     <p>✉️ <a href="mailto:contact@drzclean.fr">contact@drzclean.fr</a></p>
                     <div class="social-links">
-                        <a href="#" class="social-link">📘</a>
-                        <a href="#" class="social-link">📷</a>
-                    </div>
+  <div class="social-links">
+  <!-- Instagram -->
+  <a href="https://instagram.com/votrecommpte" 
+     class="social-link instagram" 
+     target="_blank"
+     aria-label="Visiter notre Instagram">
+    <img src="https://www.svgrepo.com/show/452229/instagram-1.svg" alt="Instagram" width="24" height="24">
+  </a>
+  
+  <!-- Facebook -->
+  <a href="https://facebook.com/votrepage" 
+     class="social-link facebook" 
+     target="_blank"
+     aria-label="Visiter notre Facebook">
+    <img src="https://www.svgrepo.com/show/475647/facebook-color.svg" alt="Facebook" width="24" height="24">
+  </a>
+</div>
+</div>
                 </div>
             </div>
             <div class="footer-bottom">
